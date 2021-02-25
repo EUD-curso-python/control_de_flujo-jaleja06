@@ -102,28 +102,19 @@ for el in lista1:
   '1'
 ]
 """
-regresivo50 = ''
-lista = []
-inicio = 5
+regresivo50 = []
+inicio = 50
+
 
 while inicio > 0:
-  #print(inicio)
+  val = ''
   for i in range(inicio,0,-1):
-    #print(i)
-    regresivo50 += str(i) #+' '
+    val += str(i) +' '
   inicio = inicio -1
-  #regresivo50 = regresivo50.rstrip(" ")
-  #regresivo50 = regresivo50 +','
-  #regresivo50 = regresivo50 +"'," + '\n'+"'" 
-lista.extend(regresivo50)
-
+  val = val.rstrip(" ")
+  regresivo50.append(val)
   
-
-#regresivo50 = "'" + regresivo50 
-#print('regresivo50:',regresivo50)
-#print('lista: ',lista)
-
-
+#print('lista: ',regresivo50)
 
 
 """Invierta la siguiente lista usando el bucle for y guarde el resultado en 
@@ -286,7 +277,6 @@ cantidad máxima de asteriscos de 30.
 
 
 n = 0
-ast = ''
 patron = ''
 p = ''
 x = ''
@@ -305,4 +295,4 @@ for i in range(30,0,-1):
 
 patron = patron.lstrip('\n')
 patron = patron.rstrip('\n')
-print(patron)
+#print(patron)
