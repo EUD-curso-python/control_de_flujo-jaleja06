@@ -2,9 +2,13 @@
 """Guarde en lista `naturales` los primeros 100 números naturales (desde el 1) 
 usando el bucle while
 """
+naturales = []
+n = 0
+while n < 100:
+    n +=1
+    naturales.append(n)
 
-
-
+#print(naturales)
 
 """Guarde en `acumulado` una lista con el siguiente patrón:
 
@@ -13,16 +17,28 @@ usando el bucle while
 Hasta el número 50.
 """
 
-
-
+rango = list(range(1,51))
+p = ''
+acumulado = []
+#print(rango)
+for n in (rango):
+  p = p+' '+str(n)
+  p = p.lstrip()
+  #print(p)
+  acumulado.append(p)
+#print(acumulado)
 
 """Guarde en `suma100` el entero de la suma de todos los números entre 1 y 100:
 """
 
+#lista = [1,2,3,4,5,6,7]
+lista = list(range(1,101))
+suma100 = 0
+for elemento in lista:
+    #print(elemento) 
+    suma100 += elemento
 
-
-
-
+#print(suma100)    
 
 """Guarde en `tabla100` un string con los primeros 10 múltiplos del número 134, 
 separados por coma, así:
@@ -31,8 +47,22 @@ separados por coma, así:
 
 """
 
+tabla100 = ''
+cant = 0
 
+for i in range(1,134*11):
+  #print('num',i)
+  #print('residuo', i % 134)
+  if i % 134 == 0 and cant < 10:
+    #tabla100 = multi + 'x '
+    tabla100 += str(i) + ','
+    #print('tabla:',tabla100)
+    #print('cant:',cant)
+    cant += 1
 
+tabla100 = tabla100.rstrip(",")
+#print(tabla100)
+#print(cant)
 
 
 """Guardar en `multiplos3` la cantidad de números que son múltiplos de 3 y 
@@ -42,7 +72,20 @@ está ordenada).
 lista1 = [12, 15, 20, 27, 32, 39, 42, 48, 55, 66, 75, 82, 89, 91, 93, 105, 123, 132, 150, 180, 201, 203, 231, 250, 260, 267, 300, 304, 310, 312, 321, 326]
 
 
+# multiplos3 = [if el %3 == 0 else False for el in lista1]
+# print(multiplos3)
 
+n = 0
+multiplos3 = 0
+
+for el in lista1:
+  # print(el)
+  n = el % 3
+  #print(n)
+  if n == 0 and el < 300:
+    multiplos3 += 1
+
+#print(cant)
 
 
 """Guardar en `regresivo50` una lista con la cuenta regresiva desde el número 
@@ -59,8 +102,26 @@ lista1 = [12, 15, 20, 27, 32, 39, 42, 48, 55, 66, 75, 82, 89, 91, 93, 105, 123, 
   '1'
 ]
 """
+regresivo50 = ''
+lista = []
+inicio = 5
 
+while inicio > 0:
+  #print(inicio)
+  for i in range(inicio,0,-1):
+    #print(i)
+    regresivo50 += str(i) #+' '
+  inicio = inicio -1
+  #regresivo50 = regresivo50.rstrip(" ")
+  #regresivo50 = regresivo50 +','
+  #regresivo50 = regresivo50 +"'," + '\n'+"'" 
+lista.extend(regresivo50)
 
+  
+
+#regresivo50 = "'" + regresivo50 
+#print('regresivo50:',regresivo50)
+#print('lista: ',lista)
 
 
 
@@ -70,8 +131,16 @@ lista1 = [12, 15, 20, 27, 32, 39, 42, 48, 55, 66, 75, 82, 89, 91, 93, 105, 123, 
 """
 lista2 = list(range(1, 70, 5))
 
+#print(lista2)
+long = len(lista2)
+invertido = []
 
-
+for i in lista2:
+  #print(long)
+  long = long -1
+  invertido.append(lista2[long])
+  
+#print(invertido)  
 
 
 """Guardar en `primos` una lista con todos los números primos desde el 37 al 300
@@ -79,8 +148,29 @@ Nota: Un número primo es un número entero que no se puede calcular multiplican
 otros números enteros.
 """
 
+lista = list(range(37,301))
+primos = []
+noprimos = []
+x = ''
 
 
+for el in lista:
+  for i in range(2,301):
+    #print(el,'%',i,':',el % i)
+    if el % i != 0 or el == i:
+      primos.append(el)
+    else:
+      noprimos.append(el)
+  
+
+primos = set(primos)    
+noprimos = set(noprimos)  
+
+primos = primos.difference(noprimos)
+primos = sorted(list(primos))
+#print(primos)
+#print(noprimos)
+print(len(primos))
 
 
 """Guardar en `fibonacci` una lista con los primeros 60 términos de la serie de 
