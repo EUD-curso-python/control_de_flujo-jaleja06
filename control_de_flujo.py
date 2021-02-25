@@ -202,6 +202,15 @@ Por ejemplo, el factorial de 5 se calcula así:
 5! = 5 × 4 × 3 × 2 × 1 = 120
 """
 
+factorial = 1
+
+num = list(range(30,0,-1))
+
+for i in num:
+  factorial = factorial * i
+
+
+#print(factorial)
 
 
 
@@ -213,24 +222,44 @@ presentes en posiciones pares, pero solo hasta la posición 80.
 lista3 = [941, 149, 672, 208, 99, 562, 749, 947, 251, 750, 889, 596, 836, 742, 512, 19, 674, 142, 272, 773, 859, 598, 898, 930, 119, 107, 798, 447, 348, 402, 33, 678, 460, 144, 168, 290, 929, 254, 233, 563, 48, 249, 890, 871, 484, 265, 831, 694, 366, 499, 271, 123, 870, 986, 449, 894, 347, 346, 519, 969, 242, 57, 985, 250, 490, 93, 999, 373, 355, 466, 416, 937, 214, 707, 834, 126, 698, 268, 217, 406, 334, 285, 429, 130, 393, 396, 936, 572, 688, 765, 404, 970, 159, 98, 545, 412, 629, 361, 70, 602]
 
 
+rango = list(range(0,81,2))
+pares = []
 
+for el in rango:
+  pares.append(lista3[el])
 
+#print(pares)  
 
 
 """Guarde en lista `cubos` el cubo (potencia elevada a la 3) de los números del 
 1 al 100. 
 """
 
+rango = list(range(1,101))
+cubos = []
 
+for el in rango:
+  cubos.append(el ** 3)
 
-
+#print(cubos)
 
 """Encuentre la suma de la serie 2 +22 + 222 + 2222 + .. hasta sumar 10 términos 
 y guardar resultado en variable `suma_2s` 
 """
 
+n = 0
+num = ''
+suma_2s = 0
 
 
+while n < 10:
+  num = int(str(num) +'2')
+  #print(num)
+  suma_2s = suma_2s + num
+  n = n+1
+
+
+#print(suma_2s)  
 
 
 """Guardar en un string llamado `patron` el siguiente patrón llegando a una 
@@ -256,4 +285,24 @@ cantidad máxima de asteriscos de 30.
 
 
 
+n = 0
+ast = ''
+patron = ''
+p = ''
+x = ''
 
+for el in range(0,30):
+  #print(el)
+  p = '*' * el
+  #print(p)
+  patron += p + '\n'
+
+for i in range(30,0,-1):
+  #print('i',i)
+  x = '*' * i
+  #print(x)
+  patron += x + '\n'
+
+patron = patron.lstrip('\n')
+patron = patron.rstrip('\n')
+print(patron)
