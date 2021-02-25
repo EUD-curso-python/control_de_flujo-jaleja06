@@ -156,7 +156,6 @@ x = ''
 
 for el in lista:
   for i in range(2,301):
-    #print(el,'%',i,':',el % i)
     if el % i != 0 or el == i:
       primos.append(el)
     else:
@@ -168,9 +167,7 @@ noprimos = set(noprimos)
 
 primos = primos.difference(noprimos)
 primos = sorted(list(primos))
-#print(primos)
-#print(noprimos)
-print(len(primos))
+#print(len(primos))
 
 
 """Guardar en `fibonacci` una lista con los primeros 60 términos de la serie de 
@@ -183,7 +180,17 @@ del segundo cada uno se calcula sumando los dos anteriores términos de la serie
 """
 
 
+fibonacci = [0,1]
+n = 2
 
+
+while n < 60:
+  long = len(fibonacci) -1
+  long2 = len(fibonacci) -2
+  fibonacci.append(fibonacci[long]+fibonacci[long2])
+  n = n+1
+
+#print(fibonacci)
 
 
 """Guardar en `factorial` el factorial de 30
